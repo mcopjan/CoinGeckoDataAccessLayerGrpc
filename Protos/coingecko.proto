@@ -1,0 +1,32 @@
+﻿syntax = "proto3";
+
+
+service ExchangeService {
+  // Sends a greeting
+  rpc StoreExchange (StoreExchangeRequest) returns (StoreExchangeResponse);
+}
+
+message Exchange {
+    string mongo_id =1;
+    string year_established =2;
+    string country =3;
+    string description =4;
+    string url =5;
+    string image =6;
+    string has_trading_incentive =7;
+    string trust_score =8;
+    string trust_score_rank =9;
+    string trade_volume_24h_btc_normalized =10;
+    string id =11;
+    string name =12;
+}
+
+message StoreExchangeRequest {
+    Exchange exchange=1;
+    }
+
+message StoreExchangeResponse {
+    Exchange result=1;
+    }
+
+

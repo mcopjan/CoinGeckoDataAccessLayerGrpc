@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "GreeterGrpc": {
+      "commandName": "Project",
+      "applicationUrl": "https://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
