@@ -6,7 +6,6 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'GreeterGrpc' " />
   <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
         <Protobuf Include="Protos\coingecko.proto" GrpcServices="Server" />
   </ItemGroup>
 
