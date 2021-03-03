@@ -48,7 +48,7 @@ namespace GreeterGrpc
                             listenOptions.Protocols = HttpProtocols.Http2;
                         });*/
                         // Setup a HTTP/2 endpoint without TLS.
-                        options.ListenLocalhost(5000, o => o.Protocols =
+                        options.ListenLocalhost(6000, o => o.Protocols =
                             HttpProtocols.Http2);
 
                     });

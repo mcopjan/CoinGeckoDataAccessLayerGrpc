@@ -1,24 +1,30 @@
 ﻿syntax = "proto3";
-
+import "google/protobuf/empty.proto";
+package grpc.coingecko;
 
 service ExchangeService {
-  // Sends a greeting
+
   rpc StoreExchange (StoreExchangeRequest) returns (StoreExchangeResponse);
+
+  rpc GetExchange (GetExchangeRequest) returns (GetExchangeResponse);
+
+  rpc DeleteExchange (DeleteExchangeRequest) returns (DeleteExchangeResponse);
+
+  rpc UpdateExchange (UpdateExchangeRequest) returns (UpdateExchangeResponse);
 }
 
 message Exchange {
     string mongo_id =1;
     string year_established =2;
     string country =3;
-    string description =4;
-    string url =5;
-    string image =6;
-    string has_trading_incentive =7;
-    string trust_score =8;
-    string trust_score_rank =9;
-    string trade_volume_24h_btc_normalized =10;
-    string id =11;
-    string name =12;
+    string url =4;
+    string image =5;
+    string has_trading_incentive =6;
+    string trust_score =7;
+    string trust_score_rank =8;
+    string trade_volume_24h_btc_normalized =9;
+    string id =10;
+    string name =11;
 }
 
 message StoreExchangeRequest {
@@ -27,6 +33,30 @@ message StoreExchangeRequest {
 
 message StoreExchangeResponse {
     Exchange result=1;
+    }
+
+message GetExchangeRequest {
+    string id = 1;
+    }
+
+message GetExchangeResponse {
+    Exchange result=1;
+    }
+
+message UpdateExchangeRequest {
+    Exchange exchange=1;
+    }
+
+message UpdateExchangeResponse {
+    Exchange result=1;
+    }
+
+message DeleteExchangeRequest {
+    string id = 1;
+    }
+
+message DeleteExchangeResponse {
+    bool is_acknowledged=1;
     }
 
 
